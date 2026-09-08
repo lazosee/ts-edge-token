@@ -19,7 +19,7 @@
   "scripts": {
     "build": "tsup && tsc",
     "docs:readme": "typedoc --options typedoc.readme.json && node scripts/update-readme.mjs",
-    "docs:pages": "typedoc --options typedoc.json",
+    "docs:pages": "typedoc --options typedoc.html.json",
     "docs": "npm run docs:readme && npm run docs:pages"
   },
   "devDependencies": {
