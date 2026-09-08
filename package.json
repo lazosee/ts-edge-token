@@ -6,18 +6,42 @@
   "types": "./dist/index.d.ts",
   "module": "./dist/index.js",
   "main": "./dist/index.cjs",
+  "keywords": [
+    "Edge",
+    "Token",
+    "JWT",
+    "Paseto"
+  ],
+  "homepage": "https://lazosee.github.io/ts-edge-token/",
+  "bugs": {
+    "url": "https://github.com/lazosee/ts-edge-token/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lazosee/ts-edge-token.git"
+  },
+  "license": "MIT",
+  "author": "Lazaro Osee <oseelazaro@gmail.com> (https://github.com/lazosee)",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
-    "build": "tsup && tsc",
+    "build": "tsup src/index.ts --format cjs,esm && tsc",
+    "prepublishOnly": "npm run build",
     "docs:readme": "typedoc --options typedoc.readme.json && node scripts/update-readme.mjs",
     "docs:pages": "typedoc --options typedoc.html.json",
     "docs": "npm run docs:readme && npm run docs:pages"
