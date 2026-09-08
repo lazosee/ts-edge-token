@@ -1,6 +1,6 @@
 {
   "name": "@edgetoken/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Zero-dependency edge-ready JWT and PASETO v3 engine powered by Web Cryptography",
   "type": "module",
   "types": "./dist/index.d.ts",
